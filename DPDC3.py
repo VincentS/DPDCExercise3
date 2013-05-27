@@ -20,12 +20,11 @@ def main():
 		print "Now on line" + str(count)	
 	
 		for j in candidates:
-			if row[int(sys.argv[2])] not in instancelist[j].dict:
-				instancelist[j].dict[row[int(sys.argv[2])]]=row[j]
-				print "Test"
-			elif instancelist[j].dict.get(row[int(sys.argv[2])])!=row[j]:
+			if row[int(sys.argv[2])] in instancelist[j].dict and instancelist[j].dict.get(row[int(sys.argv[2])])!=row[j]:
 				del candidates[j]
-				print "Delete"
+			else:
+				instancelist[j].dict[row[int(sys.argv[2])]]=row[j]
+		
 				
 	
 				
